@@ -55,3 +55,35 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+//Import DOM element
+const containerEl = document.getElementById('container')
+//create post element
+const post = document.getElementById('post')
+
+
+//get Info
+//Header
+let nameUser = ''
+let data = ''
+let pictureUser = ''
+//text
+let text = ''
+//image
+let image = ''
+//footer
+let footerLikes = ''
+posts.forEach((post) => {
+    nameUser = `<span>${post.author.name}</span>`
+    data = `<span>${post.created}</span>`
+    pictureUser = `<img class="logo" src="${post.author.image}">`
+    text = `<p>${post.content}</p>`
+    image = `<img src="${post.media}">`
+    footerLikes = `<div>Piace a ${post.likes}</div>`
+    post.insertAdjacentHTML('beforeend', pictureUser)
+    post.insertAdjacentHTML('beforeend', nameUser)
+    post.insertAdjacentHTML('beforeend', data)
+    post.insertAdjacentHTML('beforeend', text)
+    post.insertAdjacentHTML('beforeend', image)
+    post.insertAdjacentHTML('beforeend', footerLikes)
+})
