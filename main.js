@@ -58,32 +58,30 @@ const posts = [
 
 //Import DOM element
 const containerEl = document.getElementById('container')
-//create post element
-const post = document.getElementById('post')
 
 
-//get Info
-//Header
-let nameUser = ''
-let data = ''
-let pictureUser = ''
-//text
-let text = ''
-//image
-let image = ''
-//footer
-let footerLikes = ''
+
+//post
+let post = ''
 posts.forEach((post) => {
-    nameUser = `<span>${post.author.name}</span>`
-    data = `<span>${post.created}</span>`
-    pictureUser = `<img class="logo" src="${post.author.image}">`
-    text = `<p>${post.content}</p>`
-    image = `<img src="${post.media}">`
-    footerLikes = `<div>Piace a ${post.likes}</div>`
-    post.insertAdjacentHTML('beforeend', pictureUser)
-    post.insertAdjacentHTML('beforeend', nameUser)
-    post.insertAdjacentHTML('beforeend', data)
-    post.insertAdjacentHTML('beforeend', text)
-    post.insertAdjacentHTML('beforeend', image)
-    post.insertAdjacentHTML('beforeend', footerLikes)
+    post = ` <div id="post">
+                <div class="post_header">
+                    <div class="logo">
+                        <img src="${post.author.image}" alt="">
+                    </div>
+                    <div class="user">
+                        <span>${post.author.name}</span>
+                        <span id="date">${post.created}</span>
+                    </div>
+                </div>
+                <div class="post_text">${post.content}</div>
+                <div class="media">
+                    <img src="${post.media}" alt="">
+                </div>
+                <div class="footer">
+                    <div class="left">Mi Piace</div>
+                    <div class="right">Piace a ${post.likes} persone</div>
+                </div>
+            </div>`
+    containerEl.insertAdjacentHTML('afterbegin', post)
 })
