@@ -64,7 +64,7 @@ const containerEl = document.getElementById('container')
 //post
 let post = ''
 posts.forEach((post) => {
-    post = ` <div id="post">
+    post = ` <div id="${post.id}" class="post">
                 <div class="post_header">
                     <div class="logo">
                         <img src="${post.author.image}" alt="">
