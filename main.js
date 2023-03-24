@@ -79,8 +79,8 @@ posts.forEach((post) => {
                     <img src="${post.media}" alt="">
                 </div>
                 <div class="footer">
-                    <div class="left">Mi Piace</div>
-                    <div class="right">Piace a ${post.likes} persone</div>
+                    <div class="left"><i class="fa-solid fa-thumbs-up"></i> Mi Piace</div>
+                    <div class="right">Piace a <span class="likes">${post.likes}</span> persone</div>
                 </div>
             </div>`
     containerEl.insertAdjacentHTML('afterbegin', post)
